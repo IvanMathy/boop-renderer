@@ -693,29 +693,78 @@
                     <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psu-kr-j34">
                         <rect key="frame" x="0.0" y="0.0" width="700" height="413"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" allowsMagnification="YES" usesPredominantAxisScrolling="NO" id="iYv-Yn-yiS">
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" id="6XF-OJ-vQT">
                                 <rect key="frame" x="0.0" y="0.0" width="443" height="413"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <clipView key="contentView" autoresizesSubviews="NO" id="0KC-9S-ojU" customClass="CenteringClipView" customModule="Boop_Renderer" customModuleProvider="target">
-                                    <rect key="frame" x="1" y="1" width="426" height="396"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <view id="QrK-yk-slZ" customClass="SyntaxTextView" customModule="SavannaKit">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" name="underPageBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="YCG-9B-O4U">
-                                    <rect key="frame" x="1" y="397" width="426" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="yyR-MC-bTC">
-                                    <rect key="frame" x="427" y="1" width="15" height="396"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" allowsMagnification="YES" usesPredominantAxisScrolling="NO" id="iYv-Yn-yiS">
+                                        <rect key="frame" x="-221" y="0.0" width="442" height="413"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <clipView key="contentView" autoresizesSubviews="NO" id="0KC-9S-ojU" customClass="CenteringClipView" customModule="Boop_Renderer" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="442" height="413"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <view id="QrK-yk-slZ" customClass="SyntaxTextView" customModule="SavannaKit">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" name="underPageBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="YCG-9B-O4U">
+                                            <rect key="frame" x="1" y="397" width="425" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="yyR-MC-bTC">
+                                            <rect key="frame" x="426" y="1" width="15" height="396"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="250.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Y5-QH-b43">
+                                        <rect key="frame" x="10" y="0.0" width="115" height="30"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-8B-LhG">
+                                                <rect key="frame" x="-2" y="8" width="70" height="14"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Zoom: 100%" id="xTp-2w-SXp">
+                                                    <font key="font" metaFont="smallSystem"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dpR-Q0-8RS">
+                                                <rect key="frame" x="74" y="6" width="41" height="18"/>
+                                                <buttonCell key="cell" type="inline" title="Reset" bezelStyle="inline" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3ga-aE-aS3">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="smallSystemBold"/>
+                                                </buttonCell>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Tfn-34-bze"/>
+                                        </constraints>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Y5-QH-b43" firstAttribute="leading" secondItem="6XF-OJ-vQT" secondAttribute="leading" constant="10" id="CUR-GV-Y1K"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Y5-QH-b43" secondAttribute="bottom" id="Xjx-Jt-EEz"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                             <customView id="XnE-eS-Gzh">
                                 <rect key="frame" x="444" y="0.0" width="256" height="413"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -742,7 +791,7 @@
                                                 <rect key="frame" x="0.0" y="74" width="230" height="65"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B2v-EC-bpa">
-                                                        <rect key="frame" x="-2" y="26" width="84" height="14"/>
+                                                        <rect key="frame" x="-56" y="26" width="84" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="b4I-jo-H7A"/>
                                                         </constraints>
@@ -799,7 +848,7 @@
                                                 <rect key="frame" x="0.0" y="5" width="230" height="65"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cvT-Fn-dUW">
-                                                        <rect key="frame" x="-2" y="26" width="84" height="14"/>
+                                                        <rect key="frame" x="-56" y="26" width="84" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="NtW-dJ-bsz"/>
                                                         </constraints>
@@ -884,7 +933,7 @@
                             </customView>
                         </subviews>
                         <holdingPriorities>
-                            <real value="249"/>
+                            <real value="247"/>
                             <real value="250"/>
                         </holdingPriorities>
                     </splitView>
@@ -902,11 +951,17 @@
                         <imageReference key="image" image="record.circle.fill" catalog="system" symbolScale="large"/>
                         <size key="minSize" width="32" height="25"/>
                         <size key="maxSize" width="32" height="25"/>
+                        <connections>
+                            <action selector="record:" target="zTW-2c-kDm" id="Ck2-vi-nbs"/>
+                        </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="C5CF2AF8-BB65-4154-9A2C-7C68C0BACE6A" label="Play" paletteLabel="Play" tag="-1" bordered="YES" id="ibM-ui-9uR">
                         <imageReference key="image" image="play.fill" catalog="system" symbolScale="large"/>
                         <size key="minSize" width="27" height="25"/>
                         <size key="maxSize" width="27" height="25"/>
+                        <connections>
+                            <action selector="play:" target="zTW-2c-kDm" id="2CI-1V-rz9"/>
+                        </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Uln-39-2Vm"/>
                 </allowedToolbarItems>

@@ -36,4 +36,10 @@ class MainViewController : NSViewController {
         self.syntaxTextView.setFrameSize(NSMakeSize(CGFloat(width), CGFloat(height)))
     }
     
+    @IBAction func record(_ sender: Any) {
+    }
+    
+    @IBAction func play(_ sender: Any) {
+    }
+    
 }
