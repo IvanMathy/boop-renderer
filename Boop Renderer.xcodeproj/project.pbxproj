@@ -11,7 +11,23 @@
 		59202B4128C6CE7B00B86ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59202B4028C6CE7B00B86ED7 /* Assets.xcassets */; };
 		59202B4428C6CE7B00B86ED7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59202B4228C6CE7B00B86ED7 /* MainMenu.xib */; };
 		59202B4D28C6D05200B86ED7 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59202B4C28C6D05200B86ED7 /* SavannaKit */; };
+		59202B5728C6D26C00B86ED7 /* SavannaKit in CopyFiles */ = {isa = PBXBuildFile; productRef = 59202B4C28C6D05200B86ED7 /* SavannaKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		59202B5A28C6D2C500B86ED7 /* CenteringClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B5928C6D2C500B86ED7 /* CenteringClipView.swift */; };
+		59202B5C28C6D41F00B86ED7 /* MainViewMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B5B28C6D41F00B86ED7 /* MainViewMainViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		59202B5628C6D23300B86ED7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				59202B5728C6D26C00B86ED7 /* SavannaKit in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		59202B3B28C6CE7B00B86ED7 /* Boop Renderer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boop Renderer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +35,8 @@
 		59202B4028C6CE7B00B86ED7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59202B4328C6CE7B00B86ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		59202B4528C6CE7B00B86ED7 /* Boop_Renderer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Boop_Renderer.entitlements; sourceTree = "<group>"; };
+		59202B5928C6D2C500B86ED7 /* CenteringClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringClipView.swift; sourceTree = "<group>"; };
+		59202B5B28C6D41F00B86ED7 /* MainViewMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,12 +70,22 @@
 		59202B3D28C6CE7B00B86ED7 /* Boop Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				59202B5828C6D2B300B86ED7 /* Support */,
 				59202B3E28C6CE7B00B86ED7 /* AppDelegate.swift */,
 				59202B4028C6CE7B00B86ED7 /* Assets.xcassets */,
 				59202B4228C6CE7B00B86ED7 /* MainMenu.xib */,
+				59202B5B28C6D41F00B86ED7 /* MainViewMainViewController.swift */,
 				59202B4528C6CE7B00B86ED7 /* Boop_Renderer.entitlements */,
 			);
 			path = "Boop Renderer";
+			sourceTree = "<group>";
+		};
+		59202B5828C6D2B300B86ED7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				59202B5928C6D2C500B86ED7 /* CenteringClipView.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,10 +98,12 @@
 				59202B3728C6CE7B00B86ED7 /* Sources */,
 				59202B3828C6CE7B00B86ED7 /* Frameworks */,
 				59202B3928C6CE7B00B86ED7 /* Resources */,
+				59202B5628C6D23300B86ED7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				59202B5228C6D1D700B86ED7 /* PBXTargetDependency */,
 			);
 			name = "Boop Renderer";
 			packageProductDependencies = (
@@ -136,11 +166,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59202B5A28C6D2C500B86ED7 /* CenteringClipView.swift in Sources */,
+				59202B5C28C6D41F00B86ED7 /* MainViewMainViewController.swift in Sources */,
 				59202B3F28C6CE7B00B86ED7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59202B5228C6D1D700B86ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 59202B5128C6D1D700B86ED7 /* SavannaKit */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		59202B4228C6CE7B00B86ED7 /* MainMenu.xib */ = {
@@ -357,6 +396,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		59202B4C28C6D05200B86ED7 /* SavannaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59202B4B28C6D05200B86ED7 /* XCRemoteSwiftPackageReference "savannakit" */;
+			productName = SavannaKit;
+		};
+		59202B5128C6D1D700B86ED7 /* SavannaKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 59202B4B28C6D05200B86ED7 /* XCRemoteSwiftPackageReference "savannakit" */;
 			productName = SavannaKit;
