@@ -10,6 +10,7 @@
 		59202B3F28C6CE7B00B86ED7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B3E28C6CE7B00B86ED7 /* AppDelegate.swift */; };
 		59202B4128C6CE7B00B86ED7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59202B4028C6CE7B00B86ED7 /* Assets.xcassets */; };
 		59202B4428C6CE7B00B86ED7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59202B4228C6CE7B00B86ED7 /* MainMenu.xib */; };
+		59202B4D28C6D05200B86ED7 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59202B4C28C6D05200B86ED7 /* SavannaKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59202B4D28C6D05200B86ED7 /* SavannaKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +76,9 @@
 			dependencies = (
 			);
 			name = "Boop Renderer";
+			packageProductDependencies = (
+				59202B4C28C6D05200B86ED7 /* SavannaKit */,
+			);
 			productName = "Boop Renderer";
 			productReference = 59202B3B28C6CE7B00B86ED7 /* Boop Renderer.app */;
 			productType = "com.apple.product-type.application";
@@ -102,6 +107,9 @@
 				Base,
 			);
 			mainGroup = 59202B3228C6CE7B00B86ED7;
+			packageReferences = (
+				59202B4B28C6D05200B86ED7 /* XCRemoteSwiftPackageReference "savannakit" */,
+			);
 			productRefGroup = 59202B3C28C6CE7B00B86ED7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -335,6 +343,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59202B4B28C6D05200B86ED7 /* XCRemoteSwiftPackageReference "savannakit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IvanMathy/savannakit/";
+			requirement = {
+				branch = feat/multilineEditing;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59202B4C28C6D05200B86ED7 /* SavannaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59202B4B28C6D05200B86ED7 /* XCRemoteSwiftPackageReference "savannakit" */;
+			productName = SavannaKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 59202B3328C6CE7B00B86ED7 /* Project object */;
 }
