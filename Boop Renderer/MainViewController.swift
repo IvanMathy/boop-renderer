@@ -13,8 +13,6 @@ class MainViewController : NSViewController {
     
     @IBOutlet weak var syntaxTextView: RecordingSyntaxTextView!
     
-    let lexer = BoopLexer()
-    
     @IBOutlet weak var zoomLabel: NSTextField!
     @IBOutlet weak var scrollView: NSScrollView!
     @objc dynamic var width: NSNumber = 400 {
@@ -31,7 +29,7 @@ class MainViewController : NSViewController {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        syntaxTextView.delegate = self
+        syntaxTextView.delegate = syntaxTextView
         
         syntaxTextView.scrollView.hasVerticalScroller = false
         syntaxTextView.scrollView.hasHorizontalScroller = false
@@ -81,28 +79,6 @@ class MainViewController : NSViewController {
         default:
             self.syntaxTextView.appearance = nil
         }
-    }
-    
-}
-
-extension MainViewController: SyntaxTextViewDelegate {
-    func theme(for appearance: NSAppearance) -> SyntaxColorTheme {
-        return DefaultTheme(appearance: appearance)
-    }
-    
-    
-    public func didChangeText(_ syntaxTextView: SyntaxTextView) {
-        
-        
-    }
-    
-    public func didChangeSelectedRange(_ syntaxTextView: SyntaxTextView, selectedRange: NSRange) {
-        print(selectedRange)
-        
-    }
-    
-    public func lexerForSource(_ source: String) -> Lexer {
-        return lexer
     }
     
 }

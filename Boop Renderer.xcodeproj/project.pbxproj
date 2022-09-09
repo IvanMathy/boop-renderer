@@ -13,12 +13,13 @@
 		59202B4D28C6D05200B86ED7 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59202B4C28C6D05200B86ED7 /* SavannaKit */; };
 		59202B5728C6D26C00B86ED7 /* SavannaKit in CopyFiles */ = {isa = PBXBuildFile; productRef = 59202B4C28C6D05200B86ED7 /* SavannaKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		59202B5A28C6D2C500B86ED7 /* CenteringClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B5928C6D2C500B86ED7 /* CenteringClipView.swift */; };
-		59202B5C28C6D41F00B86ED7 /* MainViewMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B5B28C6D41F00B86ED7 /* MainViewMainViewController.swift */; };
+		59202B5C28C6D41F00B86ED7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B5B28C6D41F00B86ED7 /* MainViewController.swift */; };
 		59202B6928C6E50900B86ED7 /* BoopToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B6428C6E50900B86ED7 /* BoopToken.swift */; };
 		59202B6A28C6E50900B86ED7 /* BoopLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B6528C6E50900B86ED7 /* BoopLexer.swift */; };
 		59202B6B28C6E50900B86ED7 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B6728C6E50900B86ED7 /* DefaultTheme.swift */; };
 		59202B6C28C6E50900B86ED7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B6828C6E50900B86ED7 /* Colors.swift */; };
 		59202B6E28C7177F00B86ED7 /* RecordingSyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B6D28C7177F00B86ED7 /* RecordingSyntaxTextView.swift */; };
+		59C5B2F328CAFFC50067B61F /* Frames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5B2F228CAFFC50067B61F /* Frames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,12 +42,13 @@
 		59202B4328C6CE7B00B86ED7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		59202B4528C6CE7B00B86ED7 /* Boop_Renderer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Boop_Renderer.entitlements; sourceTree = "<group>"; };
 		59202B5928C6D2C500B86ED7 /* CenteringClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringClipView.swift; sourceTree = "<group>"; };
-		59202B5B28C6D41F00B86ED7 /* MainViewMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewMainViewController.swift; sourceTree = "<group>"; };
+		59202B5B28C6D41F00B86ED7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		59202B6428C6E50900B86ED7 /* BoopToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoopToken.swift; sourceTree = "<group>"; };
 		59202B6528C6E50900B86ED7 /* BoopLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoopLexer.swift; sourceTree = "<group>"; };
 		59202B6728C6E50900B86ED7 /* DefaultTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		59202B6828C6E50900B86ED7 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		59202B6D28C7177F00B86ED7 /* RecordingSyntaxTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingSyntaxTextView.swift; sourceTree = "<group>"; };
+		59C5B2F228CAFFC50067B61F /* Frames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +82,13 @@
 		59202B3D28C6CE7B00B86ED7 /* Boop Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				59C5B2F128CAFFB70067B61F /* Models */,
 				59202B5828C6D2B300B86ED7 /* Support */,
 				59202B3E28C6CE7B00B86ED7 /* AppDelegate.swift */,
 				59202B4028C6CE7B00B86ED7 /* Assets.xcassets */,
 				59202B4228C6CE7B00B86ED7 /* MainMenu.xib */,
 				59202B6D28C7177F00B86ED7 /* RecordingSyntaxTextView.swift */,
-				59202B5B28C6D41F00B86ED7 /* MainViewMainViewController.swift */,
+				59202B5B28C6D41F00B86ED7 /* MainViewController.swift */,
 				59202B4528C6CE7B00B86ED7 /* Boop_Renderer.entitlements */,
 			);
 			path = "Boop Renderer";
@@ -118,6 +121,14 @@
 				59202B6828C6E50900B86ED7 /* Colors.swift */,
 			);
 			path = Themes;
+			sourceTree = "<group>";
+		};
+		59C5B2F128CAFFB70067B61F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59C5B2F228CAFFC50067B61F /* Frames.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,10 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				59202B5A28C6D2C500B86ED7 /* CenteringClipView.swift in Sources */,
-				59202B5C28C6D41F00B86ED7 /* MainViewMainViewController.swift in Sources */,
+				59202B5C28C6D41F00B86ED7 /* MainViewController.swift in Sources */,
 				59202B3F28C6CE7B00B86ED7 /* AppDelegate.swift in Sources */,
 				59202B6C28C6E50900B86ED7 /* Colors.swift in Sources */,
 				59202B6B28C6E50900B86ED7 /* DefaultTheme.swift in Sources */,
+				59C5B2F328CAFFC50067B61F /* Frames.swift in Sources */,
 				59202B6E28C7177F00B86ED7 /* RecordingSyntaxTextView.swift in Sources */,
 				59202B6928C6E50900B86ED7 /* BoopToken.swift in Sources */,
 				59202B6A28C6E50900B86ED7 /* BoopLexer.swift in Sources */,
