@@ -51,6 +51,7 @@ class MainViewController : NSViewController {
     }
     
     @IBAction func play(_ sender: Any) {
+        self.syntaxTextView.nextFrame()
     }
     
     @IBAction func resetZoom(_ sender: Any) {

@@ -39,8 +39,49 @@ class RecordingSyntaxTextView: SyntaxTextView, Frame {
     }
     
     override func textViewDidChangeSelection(_ notification: Notification) {
-        //print(self.contentTextView)
+        guard let view = (self.contentTextView as? InnerTextView) else {
+            return
+        }
+        
+        guard view.insertionRanges == nil else {
+            return
+        }
+        
+        guard view.selectedRange() != (frames.last as? SingleCursorFrame)?.cursor else {
+            
+            print(view.selectedRange() == (frames.last as? SingleCursorFrame)?.cursor)
+            return
+        }
+        
+        
+        frames.append(SingleCursorFrame(cursor: view.selectedRange(), text: self.text))
     }
+    
+    var cursor = 0;
+    
+    func nextFrame() {
+        
+        guard let view = (self.contentTextView as? InnerTextView) else {
+            return
+        }
+        
+        if cursor == frames.count {
+            cursor = 0
+        }
+        
+        let frame = frames[cursor]
+        
+        self.text = frame.text
+        
+        if let frame = (frame as? SingleCursorFrame) {
+            view.setSelectedRange(frame.cursor)
+        } else if let frame = (frame as? MultiCursorFrame) {
+            view.insertionRanges = frame.cursors
+        }
+        
+        cursor += 1
+    }
+    
 }
 
 
@@ -67,24 +108,6 @@ extension RecordingSyntaxTextView: SyntaxTextViewDelegate {
         
     }
     
-    public func didChangeSelectedRange(_ syntaxTextView: SyntaxTextView, selectedRange: NSRange) {
-    
-        guard let view = (syntaxTextView.contentTextView as? InnerTextView) else {
-            return
-        }
-        
-        guard view.insertionRanges == nil else {
-            return
-        }
-        
-        guard view.selectedRange() != (frames.last as? SingleCursorFrame)?.cursor else {
-            return
-        }
-        
-        
-        frames.append(SingleCursorFrame(cursor: view.selectedRange(), text: syntaxTextView.text))
-        
-    }
     
     func didUpdateSelectionRanges(_ syntaxTextView: SyntaxTextView) {
         guard let view = (syntaxTextView.contentTextView as? InnerTextView) else {
@@ -104,5 +127,7 @@ extension RecordingSyntaxTextView: SyntaxTextViewDelegate {
     public func lexerForSource(_ source: String) -> Lexer {
         return lexer
     }
+    
+    
     
 }
