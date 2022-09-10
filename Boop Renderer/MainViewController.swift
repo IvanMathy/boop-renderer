@@ -26,6 +26,8 @@ class MainViewController : NSViewController {
         }
     }
     
+    @objc dynamic var autoAnimate: Bool = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
