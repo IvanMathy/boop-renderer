@@ -12,6 +12,7 @@ import SavannaKit
 class MainViewController : NSViewController {
     
     @IBOutlet weak var syntaxTextView: RecordingSyntaxTextView!
+    @IBOutlet weak var generator: GifGenerator!
     
     @IBOutlet weak var zoomLabel: NSTextField!
     @IBOutlet weak var scrollView: NSScrollView!
@@ -84,4 +85,7 @@ class MainViewController : NSViewController {
         }
     }
     
+    @IBAction func exportGif(_ sender: Any) {
+        generator.generate()
+    }
 }

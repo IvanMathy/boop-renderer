@@ -19,6 +19,7 @@
 		59202B6B28C6E50900B86ED7 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B6728C6E50900B86ED7 /* DefaultTheme.swift */; };
 		59202B6C28C6E50900B86ED7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B6828C6E50900B86ED7 /* Colors.swift */; };
 		59202B6E28C7177F00B86ED7 /* RecordingSyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59202B6D28C7177F00B86ED7 /* RecordingSyntaxTextView.swift */; };
+		595985BC28D14C3100CBCC45 /* GifGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595985BB28D14C3100CBCC45 /* GifGenerator.swift */; };
 		59C5B2F328CAFFC50067B61F /* Frames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C5B2F228CAFFC50067B61F /* Frames.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		59202B6728C6E50900B86ED7 /* DefaultTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		59202B6828C6E50900B86ED7 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		59202B6D28C7177F00B86ED7 /* RecordingSyntaxTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingSyntaxTextView.swift; sourceTree = "<group>"; };
+		595985BB28D14C3100CBCC45 /* GifGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifGenerator.swift; sourceTree = "<group>"; };
 		59C5B2F228CAFFC50067B61F /* Frames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 			children = (
 				59202B6328C6E50900B86ED7 /* Editor */,
 				59202B5928C6D2C500B86ED7 /* CenteringClipView.swift */,
+				595985BB28D14C3100CBCC45 /* GifGenerator.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				59202B6C28C6E50900B86ED7 /* Colors.swift in Sources */,
 				59202B6B28C6E50900B86ED7 /* DefaultTheme.swift in Sources */,
 				59C5B2F328CAFFC50067B61F /* Frames.swift in Sources */,
+				595985BC28D14C3100CBCC45 /* GifGenerator.swift in Sources */,
 				59202B6E28C7177F00B86ED7 /* RecordingSyntaxTextView.swift in Sources */,
 				59202B6928C6E50900B86ED7 /* BoopToken.swift in Sources */,
 				59202B6A28C6E50900B86ED7 /* BoopLexer.swift in Sources */,

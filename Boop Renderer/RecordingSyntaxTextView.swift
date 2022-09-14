@@ -128,6 +128,19 @@ extension RecordingSyntaxTextView: SyntaxTextViewDelegate {
         return lexer
     }
     
+    func replayFrame(frame: Frame) {
+        guard let view = (self.contentTextView as? InnerTextView) else {
+            return
+        }
+        
+        self.text = frame.text
+        
+        if let frame = (frame as? SingleCursorFrame) {
+            view.setSelectedRange(frame.cursor)
+        } else if let frame = (frame as? MultiCursorFrame) {
+            view.insertionRanges = frame.cursors
+        }
+    }
     
     
 }
