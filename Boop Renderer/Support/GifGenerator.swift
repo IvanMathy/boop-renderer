@@ -10,16 +10,23 @@ import ImageIO
 import AppKit
 import UniformTypeIdentifiers
 
+struct Image {
+    let image: NSImage
+    let frame: Frame
+}
+
 class GifGenerator: NSObject {
     
     @IBOutlet weak var textView: RecordingSyntaxTextView!
     @IBOutlet var viewController: MainViewController!
     
-    func getImages() -> [NSImage] {
+    func getImages() -> [Image] {
         
-        return textView.frames.map({ frame -> NSImage in
+        
+        
+        return textView.frames.map({ frame -> Image in
             textView.replayFrame(frame: frame)
-            return textView.getImageRepresentation()
+            return Image(image: textView.getImageRepresentation(), frame: frame)
         })
     }
     
@@ -28,7 +35,7 @@ class GifGenerator: NSObject {
         let images = getImages()
         
         let fileProperties = [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFLoopCount: 0]]
-        let frameProperties = [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFDelayTime: 0.1]]
+        var frameProperties = [kCGImagePropertyGIFDictionary: [kCGImagePropertyGIFDelayTime: 0.1]]
         
         let documentsDirectoryURL: URL? = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         
@@ -41,8 +48,19 @@ class GifGenerator: NSObject {
             return
         }
         CGImageDestinationSetProperties(destination, fileProperties as CFDictionary)
+        
+        var lastTime = images.first!.frame.time.timeIntervalSince1970
+        
         for image in images {
-            CGImageDestinationAddImage(destination, image.cgImage(forProposedRect: nil, context: nil, hints: nil)!, frameProperties as CFDictionary)
+            if(viewController.autoAnimate) {
+                frameProperties[kCGImagePropertyGIFDictionary]?[kCGImagePropertyGIFDelayTime] = 0.5;
+            } else {
+                let newTime = image.frame.time.timeIntervalSince1970
+                frameProperties[kCGImagePropertyGIFDictionary]?[kCGImagePropertyGIFDelayTime] = newTime - lastTime;
+                lastTime = newTime
+            }
+            CGImageDestinationAddImage(destination, image.image.cgImage(forProposedRect: nil, context: nil, hints: nil)!, frameProperties as CFDictionary)
+            
         }
         guard CGImageDestinationFinalize(destination) else {
             fatalError("Failed to create gif")

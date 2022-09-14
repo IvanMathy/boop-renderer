@@ -28,6 +28,7 @@ class MainViewController : NSViewController {
     }
     
     @objc dynamic var autoAnimate: Bool = false
+    @objc dynamic var leadTime: NSNumber = 200
     
     override func awakeFromNib() {
         super.awakeFromNib()

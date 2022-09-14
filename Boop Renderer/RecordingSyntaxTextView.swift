@@ -10,7 +10,7 @@ import SavannaKit
 import AppKit
 
 
-class RecordingSyntaxTextView: SyntaxTextView, Frame {
+class RecordingSyntaxTextView: SyntaxTextView {
     
     var frames: [Frame] = []
     
@@ -54,7 +54,7 @@ class RecordingSyntaxTextView: SyntaxTextView, Frame {
         }
         
         
-        frames.append(SingleCursorFrame(cursor: view.selectedRange(), text: self.text))
+        frames.append(SingleCursorFrame(time: Date.now, cursor: view.selectedRange(), text: self.text))
     }
     
     var cursor = 0;
@@ -99,12 +99,12 @@ extension RecordingSyntaxTextView: SyntaxTextViewDelegate {
         }
         
         guard let ranges = view.insertionRanges else {
-            frames.append(SingleCursorFrame(cursor: view.selectedRange(), text: syntaxTextView.text))
+            frames.append(SingleCursorFrame(time: Date.now, cursor: view.selectedRange(), text: syntaxTextView.text))
             return
         }
         
         
-        frames.append(MultiCursorFrame(cursors: ranges, text: syntaxTextView.text))
+        frames.append(MultiCursorFrame(time: Date.now, cursors: ranges, text: syntaxTextView.text))
         
     }
     
@@ -120,12 +120,21 @@ extension RecordingSyntaxTextView: SyntaxTextViewDelegate {
         guard(ranges != (frames.last as? MultiCursorFrame)?.cursors) else {
             return
         }
-        frames.append(MultiCursorFrame(cursors: ranges, text: syntaxTextView.text))
+        frames.append(MultiCursorFrame(time: Date.now, cursors: ranges, text: syntaxTextView.text))
         
     }
     
     public func lexerForSource(_ source: String) -> Lexer {
         return lexer
+    }
+    
+    func reset() {
+        guard let view = (self.contentTextView as? InnerTextView) else {
+            return
+        }
+        
+        view.setSelectedRange(NSRange())
+        view.insertionRanges = nil
     }
     
     func replayFrame(frame: Frame) {
