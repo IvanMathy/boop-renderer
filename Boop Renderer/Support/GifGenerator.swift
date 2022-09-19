@@ -20,6 +20,9 @@ class GifGenerator: NSObject {
     @IBOutlet weak var textView: RecordingSyntaxTextView!
     @IBOutlet var viewController: MainViewController!
     
+    
+    @objc dynamic var working = false
+    
     func getImages() -> [Image] {
         
         

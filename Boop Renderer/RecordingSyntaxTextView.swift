@@ -74,6 +74,7 @@ class RecordingSyntaxTextView: SyntaxTextView {
         self.text = frame.text
         
         if let frame = (frame as? SingleCursorFrame) {
+            view.insertionRanges = nil
             view.setSelectedRange(frame.cursor)
         } else if let frame = (frame as? MultiCursorFrame) {
             view.insertionRanges = frame.cursors
@@ -92,21 +93,21 @@ extension RecordingSyntaxTextView: SyntaxTextViewDelegate {
     }
     
     
-    public func didChangeText(_ syntaxTextView: SyntaxTextView) {
-        
-        guard let view = (syntaxTextView.contentTextView as? InnerTextView) else {
-            return
-        }
-        
-        guard let ranges = view.insertionRanges else {
-            frames.append(SingleCursorFrame(time: Date.now, cursor: view.selectedRange(), text: syntaxTextView.text))
-            return
-        }
-        
-        
-        frames.append(MultiCursorFrame(time: Date.now, cursors: ranges, text: syntaxTextView.text))
-        
-    }
+//    public func didChangeText(_ syntaxTextView: SyntaxTextView) {
+//        
+//        guard let view = (syntaxTextView.contentTextView as? InnerTextView) else {
+//            return
+//        }
+//        
+//        guard let ranges = view.insertionRanges else {
+//            frames.append(SingleCursorFrame(time: Date.now, cursor: view.selectedRange(), text: syntaxTextView.text))
+//            return
+//        }
+//        
+//        
+//        frames.append(MultiCursorFrame(time: Date.now, cursors: ranges, text: syntaxTextView.text))
+//        
+//    }
     
     
     func didUpdateSelectionRanges(_ syntaxTextView: SyntaxTextView) {
@@ -145,6 +146,7 @@ extension RecordingSyntaxTextView: SyntaxTextViewDelegate {
         self.text = frame.text
         
         if let frame = (frame as? SingleCursorFrame) {
+            view.insertionRanges = nil
             view.setSelectedRange(frame.cursor)
         } else if let frame = (frame as? MultiCursorFrame) {
             view.insertionRanges = frame.cursors
